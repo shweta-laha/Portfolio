@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shweta Laha</title>
+</head>
+<style>
+	*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { 
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  background-color: rgba(224, 192, 92,0.1);
+  color: #777;
+ 
+  
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba(177, 132,111, 0.3), 
+    rgba(140, 180, 131, 0.5)), url('shweta.jpg');
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0 , 100% 75vh, 0 100%);
+}
+
+.logo-box{
+  position: absloute;
+  top: 40px;
+  left: 40px;
+  font-size: 25px;
+font-family: "Lato", sans-serif; 
+color: white;
+}
+
+.logo{
+  height: 35px;
+
+  
+}
+
+
+.text-box{
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+.heading-primary{
+  color: black;
+  text-transform: uppercase;
+
+  
+}
+
+
+.heading-primary-main{
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 8s;
+  animation-timing-function: ease-out;
+  
+  /*
+  animation delay
+  animation-repaeat 
+  
+  */
+  
+}
+
+.heading-primary-sub { 
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 14px;
+  animation: moveInRight 8s ease-out;
+  
+}
+
+@keyframes moveInLeft {  
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+
+.btn:link,
+.btn:visited { 
+text-transform: uppercase;
+text-decoration: none;
+padding: 15px 40px;
+display: inline-block;
+border-radius: 100px;
+transition: all .2s;
+position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);  
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+
+.btn:hover::after {
+  
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
+}
+
+.card {
+  margin: 30px auto;
+  width: 350px;
+  height: 400px;
+  border-radius: 40px;
+background-color: black;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: 350px;
+  height: 250px;
+
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+ border-radius: 40px 0;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+ font-family: "Lato", sans-serif;
+   margin-top: -200px;
+  height: 100px;
+}
+
+.card:hover {
+transform: scale(1.05);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title {
+	margin-left: 4px;
+	margin-right: 4px;
+  color: grey;
+ font-family: "Lato", sans-serif;
+  font-size: 18px;
+  
+}
+
+
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+ h3 {
+	 text-align: center;
+	 margin: 6% auto;
+	 font-size: 2.8rem;
+	 font-family: "Lato", sans-serif;
+	 font-weight: 800;
+	 color: black;
+}
+
+body, .search-bar {
+	position: relative;
+}
+body {
+	
+	height: 100vh;
+}
+.search-bar input,
+.search-btn, 
+.search-btn:before, 
+.search-btn:after {
+	transition: all 0.25s ease-out;
+}
+.search-bar input,
+.search-btn {
+	width: 3em;
+	height: 3em;
+}
+.search-bar input:invalid:not(:focus),
+.search-btn {
+	cursor: pointer;
+}
+.search-bar,
+.search-bar input:focus,
+.search-bar input:valid  {
+	width: 100%;
+
+}
+.search-bar input:focus,
+.search-bar input:not(:focus) + .search-btn:focus {
+	outline: transparent;
+}
+.search-bar {
+	margin: auto;
+	padding: 1.5em;
+	justify-content: center;
+	max-width: 30em;
+}
+.search-bar input {
+	background: transparent;
+	border-radius: 1.5em;
+	box-shadow: 0 0 0 0.4em #171717 inset;
+	padding: 0.75em;
+	 font-family: "Lato", sans-serif;
+	transform: translate(0.5em,0.5em) scale(0.5);
+	transform-origin: 100% 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.search-bar input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+.search-bar input:focus,
+.search-bar input:valid {
+	background: #fff;
+	border: 1px solid;
+	border-radius: 0.375em 0 0 0.375em;
+	box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+	transform: scale(1);
+}
+.search-btn {
+	background: black;
+	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+	padding: 0.75em;
+	position: relative;
+	transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
+	transform-origin: 0 50%;
+}
+.search-btn:before, 
+.search-btn:after {
+	content: "";
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+.search-btn:before {
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+	top: 0.75em;
+	left: 0.75em;
+	width: 1.2em;
+	height: 1.2em;
+}
+.search-btn:after {
+	background: white;
+	border-radius: 0 0.25em 0.25em 0;
+	top: 51%;
+	left: 51%;
+	width: 0.75em;
+	height: 0.25em;
+	transform: translate(0.2em,0) rotate(45deg);
+	transform-origin: 0 50%;
+}
+.search-btn span {
+	display: inline-block;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+}
+
+/* Active state */
+.search-bar input:focus + .search-btn,
+.search-bar input:valid + .search-btn {
+	background: black;
+	border-radius: 0 0.375em 0.375em 0;
+	transform: scale(1);
+}
+.search-bar input:focus + .search-btn:before, 
+.search-bar input:focus + .search-btn:after,
+.search-bar input:valid + .search-btn:before, 
+.search-bar input:valid + .search-btn:after {
+	opacity: 1;
+}
+.search-bar input:focus + .search-btn:hover,
+.search-bar input:valid + .search-btn:hover,
+.search-bar input:valid:not(:focus) + .search-btn:focus {
+	background: black;
+}
+.search-bar input:focus + .search-btn:active,
+.search-bar input:valid + .search-btn:active {
+	transform: translateY(1px);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	body, input {
+		color: #f1f1f1;
+	}
+	
+	.search-bar input {
+		box-shadow: 0 0 0 0.4em #f1f1f1 inset;
+	}
+	.search-bar input:focus,
+	.search-bar input:valid {
+		background: #3d3d3d;
+		box-shadow: 0 0 0 0.1em #3d3d3d inset;
+	}
+	.search-btn {
+		background: #f1f1f1;
+	}
+}
+
+.subscribe{
+  background:#111;
+  margin-bottom: 0px;
+  text-align:center;
+  padding:50px 0px;
+  position:relative;
+  font-family: "Lato", sans-serif;
+  bottom:0px;
+  width:100%;
+}
+
+h1{
+	font-family: "Lato", sans-serif;
+  font-size:46px;
+  font-weight:normal;
+  color:#aaa;
+  padding-bottom:20px;
+}
+
+p{
+  padding:0px 0px 20px 0px;
+  
+  font-family: "Lato", sans-serif;
+  color:white;
+  font-size:18px;
+  color:#777;
+}
+
+form{
+  margin:20px 0px;
+  
+}
+
+form input{
+  padding:15px 20px;
+  background:#000;
+  border:none;
+  bottom:0px;
+  outline:none;
+}
+input[type=email]
+{
+  color:#ccc;
+  width:300px;
+}
+input[type=submit]{
+
+  background:#333;
+  color:white;
+  
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 400px;
+  border-radius: 40px;
+  background-color: black;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: 250px;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+ border-radius: 40px 0;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color:white;
+ font-family: 'Kanit', sans-serif;
+  margin-top: -200px;
+  height: 100px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title {
+	margin-left: 4px;
+	margin-right: 4px;
+  color: white;
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  font-size: 18px;
+  
+}
+
+
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.text{
+ font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 14px;
+ 
+  
+}
+
+
+
+</style>
+<body>
+<header class="header"></header>
+ 
+  <div class="text-box">
+    <h1 class="heading-primary">
+    <span class="heading-primary-main">Shweta</span>
+     <span class="heading-primary-sub">benvenuto nel mio mondo</span>
+  </h1>
+    
+    
+  </div> 
+
+
+<br><br><br>
+<br><br><br>
+<br><br><br><br><br>
+
+<img src="shweta2.jpg" width=430 height="380" style="float: right; padding-right: 10%; padding-left: 5%;">
+<p style="text-align: center; font-family:Goudy Old Style; font-size: 25px; border: 2px; top: 100%;left: 45%;  padding-top: 2%; padding-right: 5%; padding-left: 15%; padding-bottom:5%;">
+
+Hey there🙋🏻‍♀️, I'm Shweta Laha, a passionate and enthusiastic girl with good web designing skill.I am pursuing my B.tech from Netaji Subhash Engineering College .Currently I am in 2nd year and my branch is Electronics and Communications. I'm looking for opportunities to upskill my journey in this field. I'm quite creative and hard working. I love to make some creative handmade stuffs and paintings🎨🖌️</p>
+
+
+
+<br><br<br><br>
+<br><br><p class="text" style="color: black; text-align: center;">HERE ARE SOME OF MY PROJECTS</p>
+<br>
+
+
+<form action="" class="search-bar">
+	<input type="search" name="search" pattern=".*\S.*" required>
+	<button class="search-btn" type="submit">
+		<span>Search</span>
+	</button>
+</form>
+
+
+<br>
+<div class="cards-list"> 
+	<a href="https://shweta-laha.github.io/Weather-App-Warmth/" style="color:black">
+<div class="card 1">
+<div class="card_image"> <img src="wall3.jpeg" /> </div>
+<div class="title ">
+	<br>
+    <p style="color: white">Weather <b>"WARMTH"</b> App Created using React.</p>
+</div></div></a>
+   
+<div class="cards-list"> 
+	<a href="https://lahacreation.000webhostapp.com/COVOBangla/COVO-%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE.html" style="color:black">
+<div class="card 1">
+<div class="card_image"> <img src="mask8.jpg" /> </div>
+<div class="title ">
+	<br>
+I have created a website <b>'COVO-বাংলা'</b> for helping people out there from Covid-19 in West Bengal. 
+</div>
+</div></div></a>
+
+<div class="cards-list"> 
+	<a href="https://lahacreation.000webhostapp.com/Final%20Project/Amelia%20Liana.html" style="color:black">
+<div class="card 1">
+<div class="card_image"> <img src="amelia9.jpg" /> </div>
+<div class="title ">
+	<br>
+    <p style="color: white">Blog Site of <b>"Amelia Liana"</b> made with Html, CSS and JavaScript </p>
+</div></div></a>
+
+
+<div class="cards-list"> 
+	
+<div class="card 1">
+<div class="card_image"> <img src="wall4.jpg" /> </div>
+<div class="title ">
+	<br>
+    <p style="color: white"><b>More Projects Coming Soon.</b> </p>
+</div></div>
+<br><br>
+<p style="padding-left:35%; ">
+<a href="https://github.com/shweta-laha"><img src="https://img.icons8.com/color/24/000000/github--v3.gif" height="100px" /></a> <a href="https://www.linkedin.com/in/shweta-laha-9254741b2/"><img src="https://img.icons8.com/material-sharp/48/000000/linkedin--v2.gif"/></a> <a href="https://devpost.com/shweta-laha?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"><img src="https://img.icons8.com/ios-filled/50/000000/devpost.png"height="100px" /></a> <a href="https://twitter.com/02Tithi"><img src="https://img.icons8.com/ios-glyphs/50/000000/twitter--v2.gif"  height="100px"/></a>
+<br><br><br><br>
+
+<div class="subscribe"ro>
+<h1>Shweta Laha</h1>
+  <p>Contact Me at- <b>shwetalaha5@gmail.com<b></p>
+
+<form action="">
+<input type="email" placeholder="Enter Your Mail"/><input type="submit" value="Send" />
+</form>
+</div>
+</body>
+</html>
